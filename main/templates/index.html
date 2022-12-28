@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<!-- SLIDER AREA -->
+<div class="witr_slider_area" id="home">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="witr_ds_content_area witr_dsider_js_active">
+					<!-- single slider item -->
+					<div class="witr_ds_slider_content">
+						<div class=" witr_ds_content text-left">
+							<div class="witr_ds_content_inner container">		
+								<h2>Golden age Strategic </h2>
+								<h2>Capital</h2>
+								<p>Golden Age Strategic Capital Is Here To Help You Grow Your Business With Lending Products That Fit Your Needs.</p>
+								<!-- btn -->
+								<div class="slider_btn">
+									<div class="btns">
+										<a href="/dashboard">Let’s start now</a>
+									</div>
+								</div>							
+								<!-- slider thumb image -->
+								<div class="witr_slider_thumb">
+									<div class="witr_slider_thumb_inner">
+										<img src="{% static 'assets/images/slider/slider1.png' %}" alt="logo" />
+									</div>
+								</div>											
+							</div>
+						</div>						
+					</div>
+
+				</div>							
+			</div>
+		</div>
+	</div>
+</div>
+<!-- END SLIDER AREA --> 
+
+{% endblock content  %}

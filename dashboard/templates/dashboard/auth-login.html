@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %} 
+	<!-- BLOG BREADCUMB START -->
+  <div class="breadcumb-area" >
+    <div class="container">				
+      <div class="row">
+        <div class="col-md-12 txtc  text-center ccase">
+          <div class="breadcumb-inner">
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><i class="fa fa-angle-right"></i></li>
+              <li>About</li>
+            </ul>						
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>	
+  <!-- BLOG BREADCUMB END -->
+  <br/>
+<center>
+<div style="width:400px">
+
+<form action="{% url 'dashboard:login' %}" method="POST" autocomplete="off">
+
+  {% csrf_token %}
+  <div class="form-group">
+    <label for="exampleInputEmail1">User Name</label>
+    <input autocomplete="off" type="text" class="form-control form-control-lg" required id="email-address" name="email" placeholder="Enter your username">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input autocomplete="new-password" type="password" class="form-control form-control-lg" required id="password" name="password" placeholder="Enter your password">
+  </div>
+  
+  <button type="submit" class="btn btn-primary">Sign in</button>
+</form>
+
+</div>
+</center>
+
+
+{% endblock content %}

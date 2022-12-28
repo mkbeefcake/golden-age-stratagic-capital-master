@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+     <!-- BLOG BREADCUMB START -->
+<div class="breadcumb-area" >
+	<div class="container">				
+		<div class="row">
+			<div class="col-md-12 txtc  text-center ccase">
+				<div class="breadcumb-inner">
+					<ul>
+						<li><a href="#">Home</a></li>
+						<li><i class="fa fa-angle-right"></i></li>
+						<li>contact</li>
+					</ul>						
+				</div>
+			</div>
+		</div>
+	</div>
+</div>	
+<!-- BLOG BREADCUMB END -->
+
+<!-- START CONTACT AREA -->
+<div class="contact_area contacts_are">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="section_title">
+					<h2>Contact Us</h2>
+					<p> Please contact us using the information below. For
+						additional information on our management consulting
+						services, please visit the appropriate page on our site.</p>
+				</div>			
+			</div>
+		</div>
+		<div class="row sdsdsd">		
+			<div class="col-md-7 col-sm-6">
+				<div class="contact_about_us">
+					<h2 class="contact-title">Get in touch</h2>			
+					<form method="post" id="contact-form">
+						{% csrf_token %}
+						<div class="contact_form_inner">
+							<div class="form_field">
+								<div class="form_field_inner">
+									<input
+									type="text"
+									name="name"
+									value=""
+									placeholder="Full name"
+									required
+								  />
+								</div>
+								<div class="form_field_inner">
+									<input
+									type="text"
+									name="email"
+									value=""
+									placeholder="Email"
+									required
+								  />
+								</div>
+								<div class="form_field_inner">
+									
+								</div>
+								<div class="form_field_inner">
+									
+								</div>								
+								<div class="form_field_comment">
+									<textarea name="message" placeholder="Write your message..." cols="30" rows="10"></textarea>
+								</div>
+							</div>
+						</div>
+						<!-- batton -->
+						<div class="contact_bnt">
+							<button name="submit">Send Message</button>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-5">
+				<div class="contact_about_us">
+					<h2 class="contact-title">contact info.</h2>
+					<!-- About contact -->						
+					<div class="contact-address">			
+						<div class="contact_s_inner"> 
+							<div class="contact-sociala-icon"> 
+								<a href="#"><i class="fa fa-envelope"></i></a>
+							</div> 
+							<div class="contact-sociala-info">  
+								<p>info@goldenagestrategiccapital.com </p>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>		
+		</div>
+	</div>
+</div>
+<!-- END CONTACT AREA -->
+
+{% endblock content %}

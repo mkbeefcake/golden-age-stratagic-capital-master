@@ -1,0 +1,147 @@
+{% load static %}
+<style>
+  
+.dropdown-toggle {
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    font-weight: 600
+}
+
+.dropdown-toggle:focus {
+    box-shadow: none !important
+}
+
+.dropdown-toggle::after {
+    display: none
+}
+
+.dropdown-menu {
+    width: 200px;
+    padding: 0rem 0;
+    transform: translate3d(0px, 50px, 0px) !important
+}
+
+.dropdown-item:focus,
+.dropdown-item:hover {
+    color: #ffffff;
+    background-color: #000000;
+    padding: 12px
+}
+
+.dropdown-item {
+    display: block;
+    width: 100%;
+    padding: 12px
+}
+</style>
+<!-- menu area  -->
+<div class="maxu_main_area one_page hidden-xs hidden-sm">
+  <div class="trp_nav_area scroll_fixed">
+    <div class="container">
+      <div class="row">
+        <!-- LOGO -->
+        <div class="col-md-1 col-sm-1 col-xs-0 hidden-xs">
+          <div class="">
+            <a
+              href="{% url 'index' %}"
+              title="Golden age Strategic Capital"
+              class="logo_sticky_1"
+              ><img
+                style="
+                  object-fit: contain;
+                  height: 118px;
+                  width: 155px;
+                  margin: 0;
+                "
+                src="{% static 'dashboard/images/logo.png' %}"
+                alt="Golden age Strategic Capital"
+            /></a>
+          </div>
+        </div>
+        <!-- END LOGO -->
+
+        <!-- MAIN MENU -->
+        <div class="col-md-10 col-sm-15 col-xs-8 hidden-xs">
+          <nav class="maxu_menu">
+            <ul class="sub-menu maxu_menu_ulfirst nav_scroll">
+              <li><a href="{% url 'index' %}">Home</a></li>
+              <li><a href="{% url 'about' %}">About Us</a></li>
+              <li><a href="{% url 'case_studies' %}">Case Studies</a></li>
+              {% comment %}
+              <li><a href="{% url 'testimonial' %}">Testimonial</a></li>
+              {% endcomment %}
+              <li><a href="{% url 'services' %}">Services</a></li>
+              <li><a href="{% url 'contact' %}">Contact us</a></li>
+              {% comment %}
+              <li><a href="{% url 'sendesta' %}">Sendesta</a></li>
+              {% endcomment %}
+              <li>
+                <div class="dropdown"> <button class="btn btn-outline-danger dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false"> <span>Business Credit Bureaus</span> <i class="fa fa-caret-down"></i> </button>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <li><a class="dropdown-item" href="{% url 'sendesta' %}">Sendesta</a></li>
+                    <li><a class="dropdown-item" href="{% url 'bradstreet' %}">Dun & Bradstreet</a></li>
+                    <li><a class="dropdown-item" href="{% url 'ziteso' %}">Ziteso</a></li>
+                    <li><a class="dropdown-item" href="{% url 'vukode' %}">Vukode</a></li>
+                  </ul>
+              </div>
+              </li>
+              {% if user.is_authenticated %}
+
+              <li><a href="{% url 'dashboard:logout' %}">Logout</a></li>
+              {% else %}
+              <li><a href="{% url 'dashboard:login' %}">Login</a></li>
+              <li><a href="{% url 'dashboard:register' %}">Sign Up</a></li>
+              {% endif %}
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END MENU AREA  -->
+
+<!-- MOBILE MENU AREA -->
+<div class="mbm hidden-md hidden-lg header_area main-menu-area">
+  <div class="row">
+    <div class="menu_area mobile-menu">
+      <nav>
+        <ul class="main-menu clearfix">
+          <li><a href="{% url 'index' %}">Home</a></li>
+          <li><a href="{% url 'about' %}">About Us</a></li>
+          <li><a href="{% url 'case_studies' %}">Case Studies</a></li>
+          <li><a href="{% url 'services' %}">Services</a></li>
+          <li><a href="{% url 'contact' %}">Contact us</a></li>
+          <li>
+            <div class="dropdown"> <a class="btn btn-outline-danger dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false"> <span>Business Credit Bureaus</span></a>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <li><a class="dropdown-item" href="{% url 'sendesta' %}">Sendesta</a></li>
+                  <li><a class="dropdown-item" href="{% url 'bradstreet' %}">Dun & Bradstreet</a></li>
+                  <li><a class="dropdown-item" href="{% url 'ziteso' %}">Ziteso</a></li>
+                  <li><a class="dropdown-item" href="{% url 'vukode' %}">Vukode</a></li>
+              </ul>
+          </div>
+          </li>
+          {% if user.is_authenticated %}
+
+          <li><a href="{% url 'dashboard:logout' %}">Logout</a></li>
+          {% else %}
+          <li><a href="{% url 'dashboard:login' %}">Login</a></li>
+          <li><a href="{% url 'dashboard:register' %}">Sign Up</a></li>
+          {% endif %}
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+<!-- END MOBILE MENU AREA  -->
+
+{% if messages %} {% for message in messages %}
+<div class="alert alert-{{ message.tags }}">
+  <a href="#" class="close" data-dismiss="alert">&times;</a>
+  {{ message }}
+</div>
+{% endfor %} {% endif %}
